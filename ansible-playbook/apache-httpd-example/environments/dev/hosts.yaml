@@ -1,0 +1,14 @@
+#this is your inventory, which lists the hosts that your playbooks will run on ans sets environment
+
+all:
+  hosts: host1.example.com
+  vars:
+    #common variables for all the Apache HTTPD roles
+    runtime_user: "{{ username }}"
+    runtime_goup: "{{ group }}"
+    apache_httpd_version: "2.4.57-SP2"
+    apache_base_location: "/var/lib/httpd"
+    ssl_port: "8080"
+    instance_name: "cloudweb"
+    #custom-playbook application deployment sample variables'
+    index-path: "/opt/var/httpd/latest/www/html"

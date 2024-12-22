@@ -1,0 +1,24 @@
+#ansible all -m shell -a uptime
+It will point to default location inventory file /etc/ansible/hosts
+all - all machine which are defined in /etc/ansible/hosts
+
+Change the default hosts file to some other location.
+#vim /etc/ ansible/ansible.cfg
+look the below line
+inventroy = /etc/ansible/hosts
+
+#ansible all -i /root/hostname1 -m shell -a uptime
+all - all hosts
+-i  - custome host inventory path
+-m  - module
+-a  - argument
+
+#ansible all -m shell -a uptime -v
+with the -v option we can see which configuration file is taking during execution.
+
+#export ANSIBLE_CONFIG=/tmp/ansible.cfg
+to set custom ansible config file
+#echo $ANSIBLE_CONFIG
+to see current value
+#unset ANSIBLE_CONFIG
+to remove custom config file 
